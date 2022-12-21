@@ -1,0 +1,16 @@
+# Samples
+# 24_gtdbtk.bac120.summary.tsv
+# 25_gtdbtk.bac120.summary.tsv
+# 38_gtdbtk.bac120.summary.tsv
+
+# taxid_24 = pd.read_csv('./24_gtdbtk.bac120.summary.tsv', sep='\t')["classification"]
+
+# taxid_24_split = taxid_24.str.split(pat=";", expand=True, n=-1)
+
+# taxid_24_split.to_csv('~/Desktop/taxid_24_split.csv')
+
+pd.read_csv('./24_gtdbtk.bac120.summary.tsv', sep='\t')["classification"].str.split(pat=";", expand=True, n=-1).to_csv('./taxid_24_split.csv')
+
+pd.read_csv('./25_gtdbtk.bac120.summary.tsv', sep='\t')["classification"].str.split(pat=";", expand=True, n=-1).to_csv('./taxid_25_split.csv')
+
+pd.read_csv('./38_gtdbtk.bac120.summary.tsv', sep='\t')["classification"].str.split(pat=";", expand=True, n=-1).to_csv('./taxid_38_split.csv')

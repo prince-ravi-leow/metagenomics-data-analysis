@@ -1,0 +1,35 @@
+Name	Completeness	Contamination	Completeness_Model_Used	Translation_Table_Used	Additional_Notes
+scaffolds_gt1000bp.bin.1	58.75	2.35	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.10	87.77	0.42	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.11	7.09	0.01	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.12	31.04	0.09	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.13	80.97	0.66	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.14	12.56	0.0	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.15	34.92	0.44	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.16	63.05	35.0	Gradient Boost (General Model)	11	Low confidence prediction - substantial (36%) disagreement between completeness prediction models
+scaffolds_gt1000bp.bin.17	81.66	0.4	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.18	69.66	1.91	Gradient Boost (General Model)	11	None
+scaffolds_gt1000bp.bin.19	74.82	2.29	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.2	82.25	0.46	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.20	75.28	10.83	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.21	30.92	0.33	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.22	17.4	0.32	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.23	57.85	3.72	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.24	12.3	0.04	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.25	22.62	0.0	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.26	13.07	0.12	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.27	23.66	0.25	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.28	26.44	0.2	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.29	80.01	3.14	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.3	81.06	71.25	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.30	15.67	0.0	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.31	26.06	0.0	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.32	10.46	0.13	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.33	71.5	2.34	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.34	29.39	0.13	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.4	18.46	0.0	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.5	28.76	0.82	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.6	86.2	0.03	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.7	40.61	0.34	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.8	52.26	1.23	Neural Network (Specific Model)	11	None
+scaffolds_gt1000bp.bin.9	71.14	3.65	Neural Network (Specific Model)	11	None
