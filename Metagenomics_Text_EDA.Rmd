@@ -9,56 +9,56 @@ library(tidyverse)
 
 # Load Gtdb-tk, select and separate `closest_placement_taxonomy` column and write to csv
 ```{r eval=FALSE, warning=FALSE, include=FALSE}
-read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/24_gtdbtk.bac120.summary.tsv') %>% 
+read_tsv('./Meta_Gtdbtk/24_gtdbtk.bac120.summary.tsv') %>% 
   select(closest_placement_taxonomy) %>% 
   separate(col = 1,
            into = c("domain", "phylum", "class", "order", "family", "genus", "species"), 
            sep = ";") %>%  
   # select(species) %>% 
-  write_excel_csv('~/Desktop/24_gtdbtk_taxid.csv')
+  #write_excel_csv('~/Desktop/24_gtdbtk_taxid.csv')
 
-read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/25_gtdbtk.bac120.summary.tsv') %>% 
+read_tsv('./Meta_Gtdbtk/25_gtdbtk.bac120.summary.tsv') %>% 
   select(closest_placement_taxonomy) %>% 
   separate(col = 1,
            into = c("domain", "phylum", "class", "order", "family", "genus", "species"), 
            sep = ";") %>% 
   # select(species) %>% 
-  write_excel_csv('~/Desktop/25_gtdbtk_taxid.csv')
+  #write_excel_csv('~/Desktop/25_gtdbtk_taxid.csv')
 
-read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/38_gtdbtk.bac120.summary.tsv') %>% 
+read_tsv('./Meta_Gtdbtk/38_gtdbtk.bac120.summary.tsv') %>% 
   select(closest_placement_taxonomy) %>% 
   separate(col = 1,
            into = c("domain", "phylum", "class", "order", "family", "genus", "species"), 
            sep = ";") %>% 
   # select(species) %>% 
-  write_excel_csv('~/Desktop/38_gtdbtk_taxid.csv')
+  #write_excel_csv('~/Desktop/38_gtdbtk_taxid.csv')
 ```
 
 # Load Gtdb-tk output
 ```{r message=FALSE, warning=FALSE}
-gtdb_24 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/24_gtdbtk.bac120.summary.tsv') 
+gtdb_24 <- read_tsv('./Meta_Gtdbtk/24_gtdbtk.bac120.summary.tsv') 
 
-gtdb_25 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/25_gtdbtk.bac120.summary.tsv')
+gtdb_25 <- read_tsv('./Meta_Gtdbtk/25_gtdbtk.bac120.summary.tsv')
 
-gtdb_38 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/Meta_Gtdbtk/38_gtdbtk.bac120.summary.tsv') 
+gtdb_38 <- read_tsv('./Meta_Gtdbtk/38_gtdbtk.bac120.summary.tsv') 
 ```
 
 # Load checkM2 quality report 
 ```{r message=FALSE, warning=FALSE}
-checkm_24 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample24_quality_report.tsv')
+checkm_24 <- read_tsv('./checkM2_original_AND_edit_quality_report/sample24_quality_report.tsv')
 
-checkm_25 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample25_quality_report.tsv')
+checkm_25 <- read_tsv('./checkM2_original_AND_edit_quality_report/sample25_quality_report.tsv')
 
-checkm_38 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample38_quality_report.tsv')
+checkm_38 <- read_tsv('./checkM2_original_AND_edit_quality_report/sample38_quality_report.tsv')
 ```
 
 # Load EDITED checkM2 results 
 ```{r}
-checkm_edit_24 <- read_csv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample24_EDITED_quality_report.csv')
+checkm_edit_24 <- read_csv('./checkM2_original_AND_edit_quality_report/sample24_EDITED_quality_report.csv')
 
-checkm_edit_25 <- read_csv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample25_EDITED_quality_report.csv')
+checkm_edit_25 <- read_csv('./checkM2_original_AND_edit_quality_report/sample25_EDITED_quality_report.csv')
 
-checkm_edit_38 <- read_csv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/checkM2_original_AND_edit_quality_report/sample38_EDITED_quality_report.csv')
+checkm_edit_38 <- read_csv('./checkM2_original_AND_edit_quality_report/sample38_EDITED_quality_report.csv')
 ```
 
 # Plot EDITED checkM2 results
@@ -68,14 +68,14 @@ plot_df_24 <- checkm_edit_24 %>% mutate(Sample = "Sample 24") %>% as_tibble()
 plot_df_25 <- checkm_edit_25 %>% mutate(Sample = "Sample 25") %>% as_tibble()
 plot_df_38 <- checkm_edit_38 %>% mutate(Sample = "Sample 38") %>% as_tibble()
 
-commitdeath <- plot_df_24 %>% full_join(plot_df_25) %>% full_join(plot_df_38)
+merged_plot <- plot_df_24 %>% full_join(plot_df_25) %>% full_join(plot_df_38)
 
 # Plot
-commitdeath %>%  ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Bins after checkM2")
+merged_plot %>%  ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Bins after checkM2")
 
-commitdeath  %>% filter(completeness>75) %>% filter(contamination<25) %>%  ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Our dRep settings")
+merged_plot  %>% filter(completeness>75) %>% filter(contamination<25) %>%  ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Our dRep settings")
 
-commitdeath %>% filter(completeness>90 & contamination<5) %>% ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Only HQ bins")
+merged_plot %>% filter(completeness>90 & contamination<5) %>% ggplot(aes(x=completeness,y=contamination,colour=Sample))+geom_point()+ggtitle("Only HQ bins")
 ```
 
 # contaminate/completeness plot with plots 
@@ -85,7 +85,7 @@ Medium quality: complete=50-90 and contamination=0-10
 High quality: complete=90-100 and contamination=0-5
 ```{r}
 # All genome bins (dRep highlighted)
-commitdeath %>% ggplot(aes(x=completeness,y=contamination,colour=Sample)) + 
+merged_plot %>% ggplot(aes(x=completeness,y=contamination,colour=Sample)) + 
   scale_color_manual(values = c("Sample 24" = "blue", "Sample 25" = "red", "Sample 38" = "black")) +
   geom_point() +
   geom_rect(aes(xmin = 75, xmax = Inf, ymin = -Inf, ymax = 25), alpha = 0.005, fill = "white") + # dRep settings
@@ -94,10 +94,10 @@ commitdeath %>% ggplot(aes(x=completeness,y=contamination,colour=Sample)) +
   # ggtitle("All genome bins after checkM2") +
   theme(legend.position="bottom")
 
-ggsave('~/Desktop/bin_all.png')
+#ggsave('~/Desktop/bin_all.png')
 
 # dRep bins (MQ and HQ bins highlighted)
-commitdeath %>% 
+merged_plot %>% 
   filter(completeness>75 & contamination<25) %>% 
   ggplot(aes(x=completeness,y=contamination,colour=Sample)) + 
   scale_color_manual(values = c("Sample 24" = "blue", "Sample 25" = "red", "Sample 38" = "black")) +
@@ -115,7 +115,7 @@ commitdeath %>%
 ```{r}
 # dRep bins (MQ and HQ bins highlighted)
 
-commitdeath %>% 
+merged_plot %>% 
   filter(completeness>75 & contamination<25) %>% 
   ggplot(aes(x=completeness,y=contamination,colour=Sample)) + 
   scale_color_manual(values = c("Sample 24" = "blue", "Sample 25" = "red", "Sample 38" = "black")) +
@@ -128,7 +128,7 @@ commitdeath %>%
   theme_bw() +
   guides(color = FALSE, size = FALSE)
 
-ggsave('~/Desktop/bin_mediumquality.png')
+#ggsave('~/Desktop/bin_mediumquality.png')
 ```
 
 # Example of rectangle plot
@@ -173,19 +173,19 @@ checkm_edit_38 %>% count()
 
 # Coverage table (Metabat2/JGI)
 ```{r}
-coverage_24 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/jgi_coverage_table/coverage_ERR2597524.txt')
+coverage_24 <- read_tsv('./jgi_coverage_table/coverage_ERR2597524.txt')
 
-coverage_25 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/jgi_coverage_table/coverage_ERR2597525.txt')
+coverage_25 <- read_tsv('./jgi_coverage_table/coverage_ERR2597525.txt')
 
-coverage_38 <- read_tsv('/Users/prince/Library/CloudStorage/OneDrive-Personal/Documents/DTU/Courses/Metagenomics/jgi_coverage_table/coverage_ERR2597538.txt')
+coverage_38 <- read_tsv('./jgi_coverage_table/coverage_ERR2597538.txt')
 
 ```
 
 # ALR - re-ordering them
 ```{r}
-alr_24 <- read_csv('~/Desktop/ALR_24.csv') %>% mutate(Sample = "Sample 24") 
-alr_25 <- read_csv('~/Desktop/ALR_25.csv') %>% mutate(Sample = "Sample 25")
-alr_38 <- read_csv('~/Desktop/ALR_38.csv') %>% mutate(Sample = "Sample 38")
+alr_24 <- read_csv('./ALR_24.csv') %>% mutate(Sample = "Sample 24") 
+alr_25 <- read_csv('./ALR_25.csv') %>% mutate(Sample = "Sample 25")
+alr_38 <- read_csv('./ALR_38.csv') %>% mutate(Sample = "Sample 38")
 
 alr_composite <- alr_24 %>% full_join(alr_25) %>% full_join(alr_38) %>% select(c("Sample", "Class", "logFPKM"))
 
@@ -197,7 +197,7 @@ alr_composite %>%
   theme(legend.position="bottom") +
   xlab(label="AMR gene class")
   
-ggsave('~/Desktop/ALR_new.png')
+#ggsave('~/Desktop/ALR_new.png')
 ```
 
 
