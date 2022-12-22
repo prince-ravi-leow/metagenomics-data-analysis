@@ -1,10 +1,10 @@
-#!/usr/opt/anaconda3/envs/meta/bin python3.10
+#!/usr/bin/env python3
 
 import pandas as pd
 from pathlib import Path
 
 # Path to dir with mapstat files
-PATH = '/Users/prince/Documents/Metagenomics/silva/'
+PATH = ''
 
 mapstat_files = [] 
 for mfile in Path(PATH).glob('*.mapstat'):
@@ -23,5 +23,5 @@ abundance_tbl = catmapstat.pivot(index='sample_name', columns='refSequence', val
 # replace null values with zeros
 abundance_tbl = abundance_tbl.fillna(0)
 
-abundance_tbl.to_csv(r'/Users/prince/Documents/Metagenomics/silva/silva_abundance_table_24_25_38.csv', index = False, 
+abundance_tbl.to_csv(r'.csv', index = False, 
 header=True)
