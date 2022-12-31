@@ -53,3 +53,18 @@ full_df %>%
   ggtitle('Bins used in dRep', subtitle = 'Lightgreen=MQ bins Darkgreen=HQ bins')
 
 ggsave('./checkM2/dRep_bins.png')
+
+# Gtdb-dk outputs data wrangling
+## Load function to perform string split of gtdbtk closest_placement_taxonomy column, and export to csv
+taxid_string_split <- function(input_csv,output_csv){
+read_tsv(input_csv) %>% 
+  select(closest_placement_taxonomy) %>% 
+  separate(col = 1,
+           into = c("domain", "phylum", "class", "order", "family", "genus", "species"), 
+           sep = ";") %>%  
+  write_excel_csv(output_csv)
+}
+## Perform string split 
+taxid_string_split('Gtdbtk/24_gtdbtk.bac120.summary.tsv','Gtdbtk/24_gtdbtk_taxid.csv')
+taxid_string_split('Gtdbtk/25_gtdbtk.bac120.summary.tsv','Gtdbtk/25_gtdbtk_taxid.csv')
+taxid_string_split('Gtdbtk/38_gtdbtk.bac120.summary.tsv','Gtdbtk/38_gtdbtk_taxid.csv')

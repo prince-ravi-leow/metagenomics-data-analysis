@@ -14,10 +14,10 @@ The data analysis was conducted primarily using `python`, although select sectio
 ## Data
 The outputs from the pipeline used in this study:
 * **`kma`** (k-mer alignment) for studying the sample AMR gene composition. `kma` was aligned against two databases:
-    * `resfinder`: The `*.mapstat` files, contain the identified and quantified AMR gene fragments. These have been pre-treated, and merged into `resfinder_abundance_table_24_25_38.csv`. 3 additional partial ResFinder database files, containing AMR gene names, corresponding AMR class and length are included.
-    * `SILVA`: The `*.mapstat` classifies gene fragments taxonomically, and are used to determine the bacterial content of our samples. 
+    * ResFinder: The `*.mapstat` files, contain the identified and quantified AMR gene fragments. These have been pre-treated, and merged into `resfinder_abundance_table_24_25_38.csv`. 3 additional partial ResFinder database files, containing AMR gene names, corresponding AMR class and length are included.
+    * SILVA: The `*.mapstat` classifies gene fragments taxonomically, and are used to determine the bacterial content of our samples. 
 * **`CheckM2`** to assess the metagenomic bin quality. These have have been pre-treated, and merged into: `edited_quality_report_ALL_SAMPLES.csv`.
-* **`GTDB-tk`**: taxonomical annotation, for identifying bacterial genera/species. The output files for all 3 samples are in their respective `summary.tsv` files.   
+* **`GTDB-tk`**: for studying the microbial diversity. The taxonomical annotations for all 3 samples have been pre-treated, and split into their respective `summary.tsv` files.   
 
 # Acknowledgements
 While the bulk of the data analysis was worked on by this repo's two authors André and Prince, we would like to acknowledge our third group member Adikrishna Murali Mohan, for her effort throughout the coursework, and the final poster report.
