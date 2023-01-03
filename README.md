@@ -3,9 +3,11 @@ This repository contains a curated data analysis, conducted as part of the bioin
 
 This data analysis will primarily focus on the composition of AMR gene classes in 3 genetic samples, as well as classifying bacteria that are likely present. For more details on the metagenomic pipeline, please refer to the `poster.pdf`, that was submitted as part of the course.
 
+![Full metagenomic workflow (Image credit: Adikrishna Murali Mohan)](https://github.com/prince-ravi-leow/metagenomics-data-analysis/blob/main/meta_flowchart.jpg?raw=true)
+
 # Contents
 ## Code
-The Jupyter Notebook (`metagenomics_data_analysis.ipynb`) contains a systematic documentation of our data analysis process, along with our findings, insights, and visualisations used in our final poster report. 
+The Jupyter Notebook (`metagenomics_data_analysis.ipynb`) contains a systematic documentation of our data analysis process, along with our findings, insights, and visualisations. 
 
 An export of this notebook containing only the results and no code, has also been included in HTML format.
 
@@ -20,6 +22,6 @@ The outputs from the pipeline used in this study:
 * **`GTDB-tk`**: for studying the microbial diversity. The taxonomical annotations for all 3 samples have been pre-treated, and split into their respective `summary.tsv` files.   
 
 # Acknowledgements
-While the bulk of the data analysis was worked on by this repo's two authors André and Prince, we would like to acknowledge our third group member Adikrishna Murali Mohan, for her effort throughout the coursework, and the final poster report.
+While the bulk of the data analysis was worked on by this repo's two authors André and Prince, we would like to acknowledge our third group member Adikrishna Murali Mohan, for her effort throughout the coursework, the final poster report, and the wonderful flowchart of our full metagenomic workflow.
 
 The data analysed in this study, was obtained courtesy of DTU as part of the [Danish VETII project](https://www.ebi.ac.uk/ena/browser/view/PRJEB26961?show=reads), and was passed through a specialised metagenomic pipeline, for studying anti-microbial resistance (AMR) in bacteria. The entire metagenomic pipeline, was run on DTU's HPC cluster [Computerome 2.0 (CR2)](https://www.computerome.dk/).
