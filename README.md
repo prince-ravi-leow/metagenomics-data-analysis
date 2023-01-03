@@ -9,7 +9,7 @@ This data analysis will primarily focus on the composition of AMR gene classes i
 ## Code
 The Jupyter Notebook (`metagenomics_data_analysis.ipynb`) contains a systematic documentation of our data analysis process, along with our findings, insights, and visualisations. 
 
-An export of this notebook containing only the results and no code, has also been included in HTML format.
+An export of this notebook containing only the results and no code, has also been included in PDF format.
 
 The data analysis was conducted primarily using `python`, although select sections were conducted using the `tidyverse` package suite in `R`. Such sections will be clearly marked, and corresponding `R` code is provided in `meta.R`.
 
