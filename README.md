@@ -3,7 +3,7 @@ This repository contains a curated data analysis, conducted as part of the bioin
 
 This data analysis will primarily focus on the composition of AMR gene classes in 3 genetic samples, as well as classifying bacteria that are likely present. For more details on the metagenomic pipeline, please refer to the `poster.pdf`, that was submitted as part of the course.
 
-![Full metagenomic workflow (Image credit: Adikrishna Murali Mohan)](https://github.com/prince-ravi-leow/metagenomics-data-analysis/blob/main/meta_flowchart.jpg?raw=true)
+![Full metagenomic workflow (Image credit: Adikrishna Murali Mohan)](https://github.com/prince-ravi-leow/metagenomics-data-analysis/blob/master/meta_flowchart.jpg?raw=true)
 
 # Contents
 ## Code
